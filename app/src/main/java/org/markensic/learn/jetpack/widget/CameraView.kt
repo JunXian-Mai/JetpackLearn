@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.graphics.withSave
 import org.markensic.baselibrary.api.utils.DisPlayUtils
 import org.markensic.baselibrary.global.extensions.compress
 import org.markensic.baselibrary.global.extensions.dp
@@ -22,11 +23,26 @@ class CameraView @JvmOverloads constructor(
   lateinit var location: RectF
   val paint = Paint(Paint.ANTI_ALIAS_FLAG)
   val pathHead = Path()
-  val rotatedeg = 30f
-  val camera = Camera().apply {
-    rotateX(50f)
-    setLocation(0f, 0f, -3.8f * DisPlayUtils.density)
-  }
+
+  val camera = Camera()
+
+  var headFilpeDeg = 0f
+    set(value) {
+      field = value
+      invalidate()
+    }
+
+  var rotatedeg = 30f
+    set(value) {
+      field = value
+      invalidate()
+    }
+
+  var bottomFilpeDeg = 50f
+    set(value) {
+      field = value
+      invalidate()
+    }
 
   override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
     location = RectF(0f, 0f, width.toFloat(), height.toFloat())
@@ -66,23 +82,36 @@ class CameraView @JvmOverloads constructor(
 
 
     offset = padding + avatarWidth / 2f
-    canvas.save()
-    canvas.translate(offset, offset)
-    canvas.rotate(-rotatedeg)
-    canvas.clipRect(-offset, -height / 2f, width - offset, 0f)
-    canvas.rotate(rotatedeg)
-    canvas.translate(-offset, -offset)
-    canvas.drawBitmap(avatar, padding, padding, paint)
-    canvas.restore()
+    canvas.withSave {
+      canvas.translate(offset, offset)
+      canvas.rotate(-rotatedeg)
+      camera.apply {
+        save()
+        rotateX(headFilpeDeg)
+        setLocation(0f, 0f, -3.8f * DisPlayUtils.density)
+        applyToCanvas(canvas)
+        restore()
+      }
+      canvas.clipRect(-avatarWidth, -avatarWidth, avatarWidth, 0f)
+      canvas.rotate(rotatedeg)
+      canvas.translate(-offset, -offset)
+      canvas.drawBitmap(avatar, padding, padding, paint)
+    }
 
-    canvas.save()
-    canvas.translate(offset, offset)
-    canvas.rotate(-rotatedeg)
-    camera.applyToCanvas(canvas)
-    canvas.clipRect(-offset, 0f, width - offset, height / 2f)
-    canvas.rotate(rotatedeg)
-    canvas.translate(-offset, -offset)
-    canvas.drawBitmap(avatar, padding, padding, paint)
-    canvas.restore()
+    canvas.withSave {
+      canvas.translate(offset, offset)
+      canvas.rotate(-rotatedeg)
+      camera.apply {
+        save()
+        rotateX(bottomFilpeDeg)
+        setLocation(0f, 0f, -3.8f * DisPlayUtils.density)
+        applyToCanvas(canvas)
+        restore()
+      }
+      canvas.clipRect(-avatarWidth, 0f, avatarWidth, avatarWidth)
+      canvas.rotate(rotatedeg)
+      canvas.translate(-offset, -offset)
+      canvas.drawBitmap(avatar, padding, padding, paint)
+    }
   }
 }
