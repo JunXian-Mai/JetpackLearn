@@ -16,19 +16,13 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-  <FrameLayout
-    android:layout_width="0dp"
+  <org.markensic.learn.jetpack.widget.MaterialEditText
+    android:id="@+id/met"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    android:background="@color/purple_200"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/btn">
-
-    <org.markensic.learn.jetpack.widget.MaterialEditText
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
-
-  </FrameLayout>
+    android:textSize="20dp"
+    android:hint="LabelText"
+    android:textColorHint="@color/teal_700"
+    app:layout_constraintTop_toBottomOf="@+id/btn"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

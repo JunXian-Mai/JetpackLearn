@@ -3,9 +3,11 @@ package org.markensic.learn.jetpack
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.PointF
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.postDelayed
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
@@ -23,6 +25,19 @@ class ViewBindingActivity : AppCompatActivity(), LifecycleObserver {
     binding.btn.setOnClickListener {
       startActivity(Intent(this, DataBindingActivity::class.java))
     }
+
+//    binding.met.postDelayed(3000) {
+//      binding.met.enableFloatLabel = false
+//    }
+//    binding.met.postDelayed(6000) {
+//      binding.met.labelText = "PassWord"
+//    }
+//    binding.met.postDelayed(9000) {
+//      binding.met.labelTextSize = 20.dp
+//    }
+//    binding.met.postDelayed(12000) {
+//      binding.met.labelTextColor = Color.BLUE
+//    }
 
 //    binding.scaleCircle.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
 //      binding.scaleCircle.scaleCircleWithAnime(10.dp)
