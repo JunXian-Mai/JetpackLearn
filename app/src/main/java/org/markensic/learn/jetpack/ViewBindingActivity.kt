@@ -31,32 +31,32 @@ class ViewBindingActivity : AppCompatActivity(), LifecycleObserver {
 //    binding.sideCircle.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
 //      binding.sideCircle.silde(PointF(120.dp, 160.dp))
 //    }
-
-    binding.stringAnim.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
-      binding.stringAnim.refreshToString("桃金娘科")
-    }
-
-    val rotateAnime = ObjectAnimator.ofFloat(binding.camera, "rotatedeg", 210f).also {
-      it.startDelay = 1000
-      it.duration = 1000
-    }
-    val bottomAnime = ObjectAnimator.ofFloat(binding.camera, "bottomFilpeDeg", 210f).also {
-      it.startDelay = 200
-      it.duration = 1000
-    }
-    val headAnime = ObjectAnimator.ofFloat(binding.camera, "headFilpeDeg", 210f).also {
-      it.startDelay = 200
-      it.duration = 1000
-    }
-
-    val rotateAnime2 = ObjectAnimator.ofFloat(binding.camera, "rotatedeg", 270f).also {
-      it.startDelay = 200
-      it.duration = 1000
-    }
-
-    val animeSet = AnimatorSet()
-    animeSet.playSequentially(rotateAnime, bottomAnime, headAnime, rotateAnime2)
-    animeSet.start()
+//
+//    binding.stringAnim.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+//      binding.stringAnim.refreshToString("桃金娘科")
+//    }
+//
+//    val rotateAnime = ObjectAnimator.ofFloat(binding.camera, "rotatedeg", 210f).also {
+//      it.startDelay = 1000
+//      it.duration = 1000
+//    }
+//    val bottomAnime = ObjectAnimator.ofFloat(binding.camera, "bottomFilpeDeg", 210f).also {
+//      it.startDelay = 200
+//      it.duration = 1000
+//    }
+//    val headAnime = ObjectAnimator.ofFloat(binding.camera, "headFilpeDeg", 210f).also {
+//      it.startDelay = 200
+//      it.duration = 1000
+//    }
+//
+//    val rotateAnime2 = ObjectAnimator.ofFloat(binding.camera, "rotatedeg", 270f).also {
+//      it.startDelay = 200
+//      it.duration = 1000
+//    }
+//
+//    val animeSet = AnimatorSet()
+//    animeSet.playSequentially(rotateAnime, bottomAnime, headAnime, rotateAnime2)
+//    animeSet.start()
 
     lifecycle.addObserver(this)
   }

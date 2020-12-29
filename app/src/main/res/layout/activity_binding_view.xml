@@ -11,28 +11,24 @@
     android:id="@+id/btn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textAllCaps="false"
     android:text="Start DataBinding!"
+    android:textAllCaps="false"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-
-  <org.markensic.learn.jetpack.widget.CameraView
-    android:id="@+id/camera"
-    android:layout_width="275dp"
-    android:layout_height="275dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/btn"
-    android:layout_marginTop="10dp"/>
-
-  <org.markensic.learn.jetpack.widget.StringAnimView
-    android:id="@+id/stringAnim"
-    android:layout_width="275dp"
-    android:layout_height="275dp"
+  <FrameLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
+    android:background="@color/purple_200"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/camera" />
+    app:layout_constraintTop_toBottomOf="@+id/btn">
+
+    <org.markensic.learn.jetpack.widget.MaterialEditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+  </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
