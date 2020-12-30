@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.graphics.alpha
 import org.markensic.baselibrary.global.extensions.dp
 import org.markensic.learn.jetpack.R
 
@@ -50,9 +51,7 @@ class MaterialEditText (
       }
     }
 
-  val labelPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-    color = resources.getColor(R.color.purple_500)
-  }
+  val labelPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
   var labelText: String = ""
     set(value) {
@@ -80,6 +79,7 @@ class MaterialEditText (
       }
     }
 
+  val defaultLabelTextColorAlpha: Int
   init {
     val defaultLabelText = hint.toString()
     val defaultLabelSize = if(paint.textSize - 7.dp > 0) paint.textSize - 7.dp else 11.dp
@@ -91,6 +91,7 @@ class MaterialEditText (
     labelText = ty.getString(R.styleable.MaterialEditText_floatLabelText) ?: defaultLabelText
     labelTextSize = ty.getDimension(R.styleable.MaterialEditText_floatLabelSize, defaultLabelSize)
     labelTextColor = ty.getColor(R.styleable.MaterialEditText_floatLabelColor, defaultLabelColor)
+    defaultLabelTextColorAlpha = labelTextColor.alpha
     ty.recycle()
   }
 
@@ -111,7 +112,7 @@ class MaterialEditText (
     super.onDraw(canvas)
 
     if (enableFloatLabel) {
-      labelPaint.alpha = (animFraction * 0xFF).toInt()
+      labelPaint.alpha = (animFraction * defaultLabelTextColorAlpha).toInt()
       val drawLabelY = toPaddingTop - labelTextpaddingBottom + (1f - animFraction) * paint.textSize
       labelPaint.textSize = labelTextSize + (paint.textSize - labelTextSize) * (1f - animFraction)
       canvas.drawText(labelText, paddingLeft.toFloat(), drawLabelY, labelPaint)
