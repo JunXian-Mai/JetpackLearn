@@ -85,7 +85,6 @@ class MaterialEditText (
     val defaultLabelSize = if(paint.textSize - 7.dp > 0) paint.textSize - 7.dp else 11.dp
     val defaultLabelColor = hintTextColors.getColorForState(intArrayOf(android.R.attr.hint), hintTextColors.defaultColor)
 
-    val arrayAttrs = intArrayOf(R.attr.enableFloatLabel, R.attr.floatLabelText, R.attr.floatLabelSize, R.attr.floatLabelColor)
     val ty = context.obtainStyledAttributes(attrs, R.styleable.MaterialEditText)
     enableFloatLabel = ty.getBoolean(R.styleable.MaterialEditText_enableFloatLabel, true)
     labelText = ty.getString(R.styleable.MaterialEditText_floatLabelText) ?: defaultLabelText
