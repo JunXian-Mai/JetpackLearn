@@ -3,9 +3,9 @@ package org.markensic.learn.jetpack.widget
 import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.children
-import org.markensic.baselibrary.global.extensions.dp
 import kotlin.math.max
 
 class TabLayout(context: Context, attrs: AttributeSet): ViewGroup(context, attrs) {
@@ -30,23 +30,19 @@ class TabLayout(context: Context, attrs: AttributeSet): ViewGroup(context, attrs
         measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed)
       }
 
-      if (childrenBounds.size < index + 1) {
-        childrenBounds.add(
-          Rect(
-            lineWidth,
-            heightUsed,
-            lineWidth + child.measuredWidth,
-            heightUsed + child.measuredHeight
-          )
-        )
-      } else {
-        childrenBounds[index]
-          .set(lineWidth, heightUsed, lineWidth + child.measuredWidth, heightUsed + child.measuredHeight)
-      }
+      if (childrenBounds.size < index + 1) childrenBounds.add(Rect())
 
-      lineWidth += child.measuredWidth
+      childrenBounds[index]
+        .set(
+          lineWidth + child.getMargin()[0],
+          heightUsed + child.getMargin()[1],
+          lineWidth + child.measuredWidth + child.getMargin()[2],
+          heightUsed + child.measuredHeight + child.getMargin()[3]
+        )
+
+      lineWidth += (child.measuredWidth + child.getMargin()[0] + child.getMargin()[2])
       widthUsed = max(widthUsed, lineWidth)
-      lineHeight = max(lineHeight, child.measuredHeight)
+      lineHeight = max(lineHeight, (child.measuredHeight + child.getMargin()[1] + child.getMargin()[3]))
     }
 
     setMeasuredDimension(
@@ -64,5 +60,32 @@ class TabLayout(context: Context, attrs: AttributeSet): ViewGroup(context, attrs
 
   override fun generateLayoutParams(attrs: AttributeSet?): LayoutParams {
     return MarginLayoutParams(context, attrs)
+  }
+
+  fun View.getMargin(): IntArray {
+    val l = if (layoutParams is MarginLayoutParams) {
+      (layoutParams as MarginLayoutParams).leftMargin
+    } else {
+      0
+    }
+
+    val t = if (layoutParams is MarginLayoutParams) {
+      (layoutParams as MarginLayoutParams).topMargin
+    } else {
+      0
+    }
+
+    val r = if (layoutParams is MarginLayoutParams) {
+      (layoutParams as MarginLayoutParams).rightMargin
+    } else {
+      0
+    }
+
+    val b = if (layoutParams is MarginLayoutParams) {
+      (layoutParams as MarginLayoutParams).bottomMargin
+    } else {
+      0
+    }
+    return intArrayOf(l, t, r, b)
   }
 }

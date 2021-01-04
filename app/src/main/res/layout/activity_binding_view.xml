@@ -26,119 +26,121 @@
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_margin="10dp"/>
+      android:layout_margin="5dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="2dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="1dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="3dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="4dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="6dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="1dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="4dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="2dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="5dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="3dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="5dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="2dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="1dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="3dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="4dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="5dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="1dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="4dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="2dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="5dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="3dp"/>
+    <org.markensic.learn.jetpack.widget.ColorTextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="2dp"/>
 
     <org.markensic.learn.jetpack.widget.ColorTextView
       android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"/>
+      android:layout_height="wrap_content"
+      android:layout_margin="1dp"/>
 
   </org.markensic.learn.jetpack.widget.TabLayout>
 
