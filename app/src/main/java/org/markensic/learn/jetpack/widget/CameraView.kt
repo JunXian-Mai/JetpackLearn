@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.graphics.withSave
 import org.markensic.baselibrary.api.utils.DisPlayUtils
-import org.markensic.baselibrary.global.extensions.compress
+import org.markensic.baselibrary.global.extensions.compressInWidth
 import org.markensic.baselibrary.global.extensions.dp
 import org.markensic.learn.jetpack.R
 
@@ -19,7 +19,7 @@ class CameraView @JvmOverloads constructor(
 
   val avatarWidth = 200.dp
   val padding = 50.dp
-  val avatar = BitmapFactory.decodeResource(resources, R.drawable.avatar).compress(avatarWidth.toInt())
+  val avatar = BitmapFactory.decodeResource(resources, R.drawable.avatar).compressInWidth(avatarWidth.toInt())
   lateinit var location: RectF
   val paint = Paint(Paint.ANTI_ALIAS_FLAG)
   val pathHead = Path()

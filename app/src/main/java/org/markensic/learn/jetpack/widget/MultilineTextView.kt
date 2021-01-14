@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import org.markensic.baselibrary.global.extensions.compress
+import org.markensic.baselibrary.global.extensions.compressInWidth
 import org.markensic.baselibrary.global.extensions.dp
 import org.markensic.baselibrary.global.extensions.sp
 import org.markensic.learn.jetpack.R
@@ -18,7 +18,7 @@ class MultilineTextView @JvmOverloads constructor(
 
   val avatarWidth = 150.dp
   val avatarPaddingTop = 55.dp
-  val avatar = BitmapFactory.decodeResource(resources, R.drawable.avatar).compress(avatarWidth.toInt())
+  val avatar = BitmapFactory.decodeResource(resources, R.drawable.avatar).compressInWidth(avatarWidth.toInt())
   val text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel enim libero. In eu posuere augue. Proin placerat tempor faucibus. Proin facilisis eget ipsum eget semper. Vestibulum ut urna diam. Nulla fermentum condimentum nunc, eget maximus tortor luctus non. Praesent ut erat turpis. Vivamus consectetur dolor sed pellentesque cursus. Pellentesque at enim lorem."
 
   val paint = Paint(Paint.ANTI_ALIAS_FLAG)

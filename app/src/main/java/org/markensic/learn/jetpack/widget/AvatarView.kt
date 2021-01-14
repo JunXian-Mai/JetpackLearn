@@ -30,7 +30,7 @@ class AvatarView @JvmOverloads constructor(
 
   override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
     rectF = RectF(0f, 0f, width.toFloat(), height.toFloat())
-    srcBitmap = originBitmap.compress((width - padding).toInt())
+    srcBitmap = originBitmap.compressInWidth((width - padding).toInt())
     dstBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
     borderBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
     srcBitmap2 = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
