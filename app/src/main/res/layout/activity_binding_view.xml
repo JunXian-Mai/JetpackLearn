@@ -16,132 +16,13 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-  <org.markensic.learn.jetpack.widget.TabLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintEnd_toEndOf="parent"
+  <org.markensic.learn.jetpack.widget.ScalableImageView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="10dp"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/btn">
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="5dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="1dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="3dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="4dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="6dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="1dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="4dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="5dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="3dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="5dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="1dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="3dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="4dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="5dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="1dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="4dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="5dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="3dp"/>
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"/>
-
-    <org.markensic.learn.jetpack.widget.ColorTextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_margin="1dp"/>
-
-  </org.markensic.learn.jetpack.widget.TabLayout>
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btn"
+    app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
