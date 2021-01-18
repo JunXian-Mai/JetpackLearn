@@ -25,7 +25,6 @@ class DrawBoardView(context: Context, attrs: AttributeSet) : View(context, attrs
 
   override fun onDraw(canvas: Canvas) {
     paths.forEach { _, path ->
-      Log.d(":test", "draw $path")
       canvas.drawPath(path, paint)
     }
   }
