@@ -16,71 +16,85 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-  <org.markensic.learn.jetpack.widget.DragHelperView
-    android:id="@+id/drag_helper"
-    android:layout_width="0dp"
-    android:layout_height="100dp"
-    android:layout_marginTop="16dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/btn">
-
-    <ImageView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:src="@drawable/avatar"
-      android:scaleType="fitXY"/>
-
-  </org.markensic.learn.jetpack.widget.DragHelperView>
-
-  <org.markensic.learn.jetpack.widget.DragListenerView
-    android:id="@+id/drag_listener"
+  <ScrollView
     android:layout_width="0dp"
     android:layout_height="0dp"
-    android:layout_marginTop="16dp"
-    app:layout_constraintStart_toStartOf="parent"
+    android:fillViewport="true"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/drag_helper"
-    app:layout_constraintBottom_toBottomOf="parent">
-
-    <ImageView
-      android:id="@+id/img_1"
-      android:layout_width="150dp"
-      android:layout_height="150dp"
-      android:src="@drawable/avatar"
-      android:contentDescription="这是"
-      android:scaleType="fitXY"/>
-
-    <ImageView
-      android:id="@+id/img_2"
-      android:layout_width="150dp"
-      android:layout_height="150dp"
-      android:src="@drawable/avatar"
-      android:contentDescription="头像\n"
-      android:scaleType="fitXY"/>
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btn">
 
     <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="300dp"
-      android:orientation="vertical"
-      android:background="@color/teal_200">
+      android:layout_height="match_parent"
+      android:orientation="vertical">
 
-      <TextView
+      <org.markensic.learn.jetpack.widget.DefineScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="描述:"
-        android:textSize="16sp"
-        android:textColor="@color/teal_700"/>
+        android:layout_height="200dp"
+        android:background="@color/teal_200"
+        android:fillViewport="true">
 
-      <TextView
-        android:id="@+id/desc"
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="top"
+            android:gravity="center_horizontal"
+            android:text="这是标题开头"
+            android:textSize="60sp" />
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="top"
+            android:gravity="center_horizontal|bottom"
+            android:text="这是标题结尾"
+            android:textSize="60sp" />
+
+        </LinearLayout>
+
+      </org.markensic.learn.jetpack.widget.DefineScrollView>
+
+      <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textColor="@color/purple_200"/>
+        android:layout_height="match_parent"
+        android:background="@color/purple_200"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="top"
+            android:gravity="center_horizontal"
+            android:text="这是内容开头"
+            android:textSize="60sp" />
+
+          <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="top"
+            android:gravity="center_horizontal|bottom"
+            android:text="这是内容结尾"
+            android:textSize="60sp" />
+
+        </LinearLayout>
+
+      </LinearLayout>
 
     </LinearLayout>
 
-  </org.markensic.learn.jetpack.widget.DragListenerView>
+  </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,14 +57,14 @@ class DragListenerView(context: Context, attrs: AttributeSet) : ViewGroup(contex
       when(it) {
         is ViewGroup -> {
           descParentView = it
-          descView = descParentView.findViewById(R.id.desc)
+//          descView = descParentView.findViewById(R.id.desc)
         }
         is View -> {
-          if (it.id == R.id.img_1) {
-            avatarView1 = it
-          } else if (it.id == R.id.img_2) {
-            avatarView2 = it
-          }
+//          if (it.id == R.id.img_1) {
+//            avatarView1 = it
+//          } else if (it.id == R.id.img_2) {
+//            avatarView2 = it
+//          }
           it.setOnLongClickListener {
             val data = ClipData(
               ClipDescription("contentDescription", arrayOf("contentDescription")),
