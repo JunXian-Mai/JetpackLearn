@@ -13,88 +13,20 @@
     android:layout_height="wrap_content"
     android:text="Start DataBinding!"
     android:textAllCaps="false"
+    android:background="@color/white"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
-  <ScrollView
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:fillViewport="true"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
+  <org.markensic.learn.jetpack.widget.DeleteTextView
+    android:id="@+id/dt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="20dp"
+    android:textSize="18sp"
+    android:text="@string/app_name"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/btn">
-
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="vertical">
-
-      <org.markensic.learn.jetpack.widget.DefineScrollView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/teal_200"
-        android:fillViewport="true">
-
-        <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:orientation="vertical">
-
-          <TextView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_gravity="top"
-            android:gravity="center_horizontal"
-            android:text="这是标题开头"
-            android:textSize="60sp" />
-
-          <TextView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_gravity="top"
-            android:gravity="center_horizontal|bottom"
-            android:text="这是标题结尾"
-            android:textSize="60sp" />
-
-        </LinearLayout>
-
-      </org.markensic.learn.jetpack.widget.DefineScrollView>
-
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/purple_200"
-        android:fillViewport="true"
-        android:orientation="vertical">
-
-        <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:orientation="vertical">
-
-          <TextView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="top"
-            android:gravity="center_horizontal"
-            android:text="这是内容开头"
-            android:textSize="60sp" />
-
-          <TextView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="top"
-            android:gravity="center_horizontal|bottom"
-            android:text="这是内容结尾"
-            android:textSize="60sp" />
-
-        </LinearLayout>
-
-      </LinearLayout>
-
-    </LinearLayout>
-
-  </ScrollView>
+    app:layout_constraintTop_toBottomOf="@+id/btn"
+    android:background="@color/teal_200"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

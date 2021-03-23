@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.PointF
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.postDelayed
 import androidx.lifecycle.Lifecycle
@@ -26,6 +27,16 @@ class ViewBindingActivity : AppCompatActivity(), LifecycleObserver {
       startActivity(Intent(this, DataBindingActivity::class.java))
     }
 
+    binding.dt.setOnLongClickListener {
+      binding.dt.showDeleteImage = true
+      return@setOnLongClickListener true
+    }
+
+    binding.dt.setCancelListener { v, parent ->
+      parent.removeView(v)
+    }
+//
+//
 //    binding.met.postDelayed(3000) {
 //      binding.met.enableFloatLabel = false
 //    }
