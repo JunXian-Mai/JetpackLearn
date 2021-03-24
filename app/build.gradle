@@ -1,9 +1,8 @@
-
 plugins {
   id 'com.android.application'
   id 'kotlin-android'
-  id 'kotlin-parcelize'
   id 'kotlin-kapt'
+  id 'kotlin-parcelize'
   id 'org.markensic'
 }
 
@@ -13,7 +12,7 @@ markensic {
 
 android {
   compileSdkVersion 30
-  buildToolsVersion "30.0.2"
+  buildToolsVersion "30.0.3"
 
   defaultConfig {
     applicationId "org.markensic.learn.jetpack"
@@ -51,6 +50,12 @@ android {
 repositories {
   flatDir {
     dirs 'libs'
+  }
+}
+
+gradle.taskGraph.whenReady {
+  tasks.each {
+    println("${it.name} : ${it.class.name - '_Decorated'}")
   }
 }
 

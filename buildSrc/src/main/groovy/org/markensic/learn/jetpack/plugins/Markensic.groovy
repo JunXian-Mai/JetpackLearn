@@ -21,6 +21,4 @@ class Markensic implements Plugin<Project> {
     def baseExtension = project.extensions.getByType(BaseExtension)
     baseExtension.registerTransform(transform)
   }
-
-
 }
