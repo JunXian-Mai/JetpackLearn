@@ -17,8 +17,8 @@ class Markensic implements Plugin<Project> {
       println "This is a gradle plugin!"
     }
 
-    def transform = new MarkensicTransform()
-    def baseExtension = project.extensions.getByType(BaseExtension)
-    baseExtension.registerTransform(transform)
+//    def transform = new MarkensicTransform()
+//    def baseExtension = project.extensions.getByType(BaseExtension)
+//    baseExtension.registerTransform(transform)
   }
 }

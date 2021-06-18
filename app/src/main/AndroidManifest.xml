@@ -3,6 +3,8 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   package="org.markensic.learn.jetpack">
 
+  <uses-permission android:name="android.permission.INTERNET"/>
+
   <application
     android:theme="@style/Theme.JetpackLearn"
     android:allowBackup="true"
@@ -10,7 +12,10 @@
     android:label="@string/app_name"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true">
-    <activity android:name=".ViewBindingActivity">
+    <activity
+      android:taskAffinity="org.markensic.learn.jetpack.view"
+      android:launchMode="standard"
+      android:name=".ViewBindingActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +23,22 @@
       </intent-filter>
     </activity>
 
-    <activity android:name=".DataBindingActivity"/>
+    <activity
+      android:taskAffinity="org.markensic.learn.jetpack.data"
+      android:launchMode="singleTask"
+      android:name=".DataBindingActivity"/>
+
+    <activity
+      android:name=".AddresslinkActivity"
+      android:screenOrientation="portrait"/>
+
+    <activity
+      android:name=".WaterfallActivity"
+      android:screenOrientation="portrait"/>
+
+    <activity
+      android:name=".ScrollActivity"
+      android:screenOrientation="portrait"/>
   </application>
 
 </manifest>

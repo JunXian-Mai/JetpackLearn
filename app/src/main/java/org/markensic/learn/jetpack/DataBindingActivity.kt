@@ -11,7 +11,7 @@ import org.markensic.learn.jetpack.viewmodels.DataBinding
 import org.markensic.learn.jetpack.viewmodels.DataBindingViewModel
 import org.markensic.learn.jetpack.viewmodels.DataBindingViewModelLiveData
 
-class DataBindingActivity : AppCompatActivity(), LifecycleObserver {
+class DataBindingActivity : BaseActicity(), LifecycleObserver {
 
   private lateinit var binding: ActivityBindingDataBinding
   private val liveData: DataBindingViewModelLiveData by viewModels()

@@ -1,6 +1,6 @@
 package org.markensic.learn.jetpack
 
-fun closuerFun(): () -> Int {
+fun closerFun(): () -> Int {
   println("define count!")
   var count = 0
   return {
@@ -9,8 +9,8 @@ fun closuerFun(): () -> Int {
 }
 
 fun main() {
-  val fun1 = closuerFun()
-  val fun2 = closuerFun()
+  val fun1 = closerFun()
+  val fun2 = closerFun()
 
   println("---defined---")
 

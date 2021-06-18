@@ -1,21 +1,16 @@
 package org.markensic.learn.jetpack
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.PointF
 import android.os.Bundle
-import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.postDelayed
+import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import org.markensic.baselibrary.global.extensions.dp
+import coil.load
 import org.markensic.learn.jetpack.databinding.ActivityBindingViewBinding
+import org.markensic.learn.jetpack.models.lhc
 
-class ViewBindingActivity : AppCompatActivity(), LifecycleObserver {
+class ViewBindingActivity : BaseActicity(), LifecycleObserver {
   private lateinit var binding: ActivityBindingViewBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,17 +19,20 @@ class ViewBindingActivity : AppCompatActivity(), LifecycleObserver {
     setContentView(binding.root)
 
     binding.btn.setOnClickListener {
-      startActivity(Intent(this, DataBindingActivity::class.java))
+      Log.d(this::class.simpleName + "_Life", "ViewBindingActivity -> DataBindingActivity")
+      startActivity(Intent(this, ScrollActivity::class.java))
     }
 
-    binding.dt.setOnLongClickListener {
-      binding.dt.showDeleteImage = true
-      return@setOnLongClickListener true
-    }
+    binding.iv.load(lhc.random())
 
-    binding.dt.setCancelListener { v, parent ->
-      parent.removeView(v)
-    }
+//    binding.dt.setOnLongClickListener {
+//      binding.dt.showDeleteImage = true
+//      return@setOnLongClickListener true
+//    }
+//
+//    binding.dt.setCancelListener { v, parent ->
+//      parent.removeView(v)
+//    }
 //
 //
 //    binding.met.postDelayed(3000) {
