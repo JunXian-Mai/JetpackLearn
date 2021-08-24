@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.Observer
+import org.markensic.baselibrary.global.extensions.logd
 import org.markensic.learn.jetpack.databinding.ActivityBindingDataBinding
 import org.markensic.learn.jetpack.viewmodels.DataBinding
 import org.markensic.learn.jetpack.viewmodels.DataBindingViewModel
@@ -28,17 +29,21 @@ class DataBindingActivity : BaseActicity(), LifecycleObserver {
 //    lifecycle.addObserver(this)
 
     //双向绑定 1： 配合"@={xxxx}"
-//    binding.lifecycleOwner = this
+    binding.lifecycleOwner = this
 
     //双向绑定 2： 配合"@={xxxx}"
-    liveData.detail.observe(this, { t ->
-      t?.let {
-        if (it.isNotBlank()) {
-          if (binding.tv.text.toString() != it) {
-            binding.tv.text = it
-          }
-        }
-      }
-    })
+//    liveData.detail.observe(this, { t ->
+//      t?.let {
+//        if (it.isNotBlank()) {
+//          if (binding.tv.text.toString() != it) {
+//            binding.tv.text = it
+//          }
+//        }
+//      }
+//    })
+
+//    liveData.testText.observe(this) {
+//      logd("changed!")
+//    }
   }
 }

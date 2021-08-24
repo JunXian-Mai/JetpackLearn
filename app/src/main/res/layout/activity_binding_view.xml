@@ -27,12 +27,21 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/btn" />
 
+  <org.markensic.learn.jetpack.widget.MultilineTextView
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:layout_marginTop="10dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/iv"/>
+
   <org.markensic.learn.jetpack.widget.TouchGroupA
     android:layout_width="0dp"
     android:layout_height="0dp"
     android:layout_marginTop="10dp"
     android:background="@color/teal_200"
     android:orientation="vertical"
+    android:visibility="gone"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"

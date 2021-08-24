@@ -3,12 +3,18 @@ package org.markensic.learn.jetpack
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.PopupWindow
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import coil.load
+import org.markensic.baselibrary.global.extensions.logd
 import org.markensic.learn.jetpack.databinding.ActivityBindingViewBinding
 import org.markensic.learn.jetpack.models.lhc
+import kotlin.concurrent.thread
 
 class ViewBindingActivity : BaseActicity(), LifecycleObserver {
   private lateinit var binding: ActivityBindingViewBinding
@@ -19,11 +25,11 @@ class ViewBindingActivity : BaseActicity(), LifecycleObserver {
     setContentView(binding.root)
 
     binding.btn.setOnClickListener {
-      Log.d(this::class.simpleName + "_Life", "ViewBindingActivity -> DataBindingActivity")
-      startActivity(Intent(this, ScrollActivity::class.java))
+      startActivity(Intent(this, DataBindingActivity::class.java))
     }
 
     binding.iv.load(lhc.random())
+    logd("decorView: ${window.decorView}")
 
 //    binding.dt.setOnLongClickListener {
 //      binding.dt.showDeleteImage = true

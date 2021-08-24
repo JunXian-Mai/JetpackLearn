@@ -7,6 +7,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import org.markensic.baselibrary.global.extensions.logd
 import org.markensic.learn.jetpack.databinding.ActivityWaterfallBinding
 import org.markensic.learn.jetpack.models.lhc
 import org.markensic.learn.jetpack.viewmodels.WaterfallViewModel
@@ -24,13 +25,11 @@ class WaterfallActivity: BaseActicity(), LifecycleObserver {
 
     binding.rcy.apply {
       layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-      adapter = object : WaterfallAdapter(this@WaterfallActivity) {
-        override fun changeLayoutManager(fillWidth: Boolean) {
-          
-        }
-      }.apply {
+      adapter = WaterfallAdapter(this@WaterfallActivity).apply {
         waterfallPic.addAll(lhc)
       }
     }
+
+    logd("decorView: ${window.decorView}")
   }
 }

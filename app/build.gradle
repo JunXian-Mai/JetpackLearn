@@ -61,7 +61,12 @@ gradle.taskGraph.whenReady {
 
 dependencies {
   implementation(name: 'baselibraryx-10.0.0', ext: 'aar')
+  implementation(name: 'BaiduLBS_AndroidSDK_Lib', ext: 'aar')
+  implementation 'pub.devrel:easypermissions:3.0.0'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinVersion"
   implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
   implementation "com.google.android.material:material:$rootProject.materialVersion"
   implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"

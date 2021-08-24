@@ -5,11 +5,13 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.2484375" />
         <entry key="app/src/main/res/layout/activity_address_link.xml" value="0.1693840579710145" />
+        <entry key="app/src/main/res/layout/activity_baidumap.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_binding_data.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_binding_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_binding_view.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_scroll.xml" value="0.1671195652173913" />
         <entry key="app/src/main/res/layout/activity_waterfall.xml" value="0.18795289855072464" />
         <entry key="app/src/main/res/layout/item_waterfall.xml" value="0.17255434782608695" />
+        <entry key="app/src/main/res/layout/pop_view.xml" value="0.23333333333333334" />
       </map>
     </option>
   </component>

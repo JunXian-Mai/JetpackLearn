@@ -49,7 +49,17 @@
       app:layout_constraintStart_toEndOf="@+id/btn_input"
       app:layout_constraintTop_toTopOf="@+id/btn_input"
       android:onClick="@{() -> LiveData.directSetText(tv, ed.getText().toString())}"/>
-    
+
+    <Button
+      android:id="@+id/testBtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@={LiveData.testText}"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btn_input"
+      android:onClick="@{() -> LiveData.changeTestText()}"
+      android:layout_marginLeft="5dp"/>
+
     <androidx.constraintlayout.widget.Guideline
       android:id="@+id/gline"
       android:layout_width="wrap_content"

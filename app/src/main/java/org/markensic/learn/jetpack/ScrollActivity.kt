@@ -17,11 +17,7 @@ class ScrollActivity: BaseActicity(), LifecycleObserver {
 
     binding.rcv.apply {
       layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-      adapter = object : WaterfallAdapter(this@ScrollActivity) {
-        override fun changeLayoutManager(fillWidth: Boolean) {
-
-        }
-      }.apply {
+      adapter = WaterfallAdapter(this@ScrollActivity).apply {
         waterfallPic.addAll(lhc)
       }
     }

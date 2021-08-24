@@ -2,52 +2,59 @@ package org.markensic.learn.jetpack.viewmodels.adapter
 
 import android.content.Context
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.toBitmap
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import coil.imageLoader
 import coil.load
 import coil.request.ImageRequest
-import coil.target.ImageViewTarget
 import org.markensic.baselibrary.api.utils.DisPlayUtils
 import org.markensic.baselibrary.global.extensions.logd
 import org.markensic.learn.jetpack.databinding.ItemWaterfallBinding
-import kotlin.math.log
 
-internal val fillWidthRatio = DisPlayUtils.heightPixels.toFloat() / DisPlayUtils.widthPixels
+val fillWidthRatio = DisPlayUtils.heightPixels.toFloat() / DisPlayUtils.widthPixels
 
-abstract class WaterfallAdapter(val context: Context) : RecyclerView.Adapter<WaterfallAdapter.ViewHolder>() {
+class Pointer(var left: Int, var right: Int)
+
+class WaterfallAdapter(val context: Context) : RecyclerView.Adapter<WaterfallAdapter.ViewHolder>() {
 
   private lateinit var binding: ItemWaterfallBinding
   val waterfallPic = mutableListOf<String>()
 
   class ViewHolder(val binding: ItemWaterfallBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    fun loadPic(url: String, changeLayoutManager: (Boolean) -> Unit) {
+    fun loadPic(url: String) {
       binding.iv.load(url) {
         target {
           (it as BitmapDrawable).apply {
             val ratio = bitmap.height.toFloat() / bitmap.width
-            val fillWidth = ratio > fillWidthRatio
-            changeLayoutManager(fillWidth)
-            if (fillWidth) {
-              val finalHeight = DisPlayUtils.widthPixels * bitmap.height / bitmap.width
-              IvReSize(DisPlayUtils.widthPixels, finalHeight)
-            } else {
-              val finalHeight = DisPlayUtils.widthPixels / 2 * bitmap.height / bitmap.width
-              IvReSize(DisPlayUtils.widthPixels / 2, finalHeight)
-            }
+            val height = DisPlayUtils.widthPixels / 2 * ratio.toInt()
+            binding.iv.resetSize(DisPlayUtils.widthPixels / 2 , height)
+
+            binding.iv.setImageDrawable(this)
           }
-          binding.iv.load(it)
         }
       }
     }
 
-    fun IvReSize(width: Int, height: Int) {
-      binding.iv.layoutParams.width = width
-      binding.iv.layoutParams.height = height
-      binding.iv.invalidate()
+    fun View.resetSize(width: Int, height: Int) {
+      this.layoutParams.width = width
+      this.layoutParams.height = height
+      this.requestLayout()
+    }
+
+    private fun ImageView.restore(drawable: Drawable?, width: Int = DisPlayUtils.widthPixels, height: Int = DisPlayUtils.heightPixels) {
+      this.layoutParams.width = width
+      this.layoutParams.height = height
+      this.setImageDrawable(drawable)
+      this.requestLayout()
+    }
+
+    fun restore() {
+      binding.iv.restore(null)
     }
   }
 
@@ -58,15 +65,19 @@ abstract class WaterfallAdapter(val context: Context) : RecyclerView.Adapter<Wat
 
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     if (position in 0 until itemCount) {
-      holder.loadPic(waterfallPic[position]) {
-        if (it) {
-          changeLayoutManager(it)
-        }
-      }
+      holder.loadPic(waterfallPic[position])
     }
   }
 
   override fun getItemCount() = waterfallPic.size
 
-  abstract fun changeLayoutManager(fillWidth: Boolean)
+  override fun onViewRecycled(holder: ViewHolder) {
+    super.onViewRecycled(holder)
+    logd("onViewRecycled: $holder, adapterPosition: ${holder.adapterPosition}, layoutPosition: ${holder.layoutPosition}")
+    holder.restore()
+  }
+
+  override fun onViewAttachedToWindow(holder: ViewHolder) {
+    super.onViewAttachedToWindow(holder)
+  }
 }

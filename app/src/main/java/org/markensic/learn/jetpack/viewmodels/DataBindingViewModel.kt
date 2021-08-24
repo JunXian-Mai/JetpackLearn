@@ -21,6 +21,8 @@ class DataBindingViewModelLiveData: ViewModel(){
 
   val btnText = "Add Input To Detail"
 
+  var testText = MutableLiveData("Wating change")
+
   val btnChangeColor = "Other Change Detail Text"
 
   fun addInputToDetail(d: String) {
@@ -43,6 +45,10 @@ class DataBindingViewModelLiveData: ViewModel(){
         text = sb.toString()
       }
     }
+  }
+
+  fun changeTestText() {
+    testText.value = "Changed"
   }
 }
 

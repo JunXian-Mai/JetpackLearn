@@ -48,6 +48,7 @@ class MultilineTextView @JvmOverloads constructor(
       } else {
         width - avatarWidth
       }
+      val maxLenght = textPaint.measureText(text)
       count = textPaint.breakText(text, start, text.length, true, textWidth, measuredWidth)
       canvas.drawText(text, start, start + count, offsetX, offsetY, textPaint)
       start += count

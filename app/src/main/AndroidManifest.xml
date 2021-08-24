@@ -3,9 +3,18 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   package="org.markensic.learn.jetpack">
 
-  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.INTERNET" />
+
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
   <application
+    android:name=".App"
     android:theme="@style/Theme.JetpackLearn"
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -13,9 +22,9 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true">
     <activity
-      android:taskAffinity="org.markensic.learn.jetpack.view"
+      android:name=".ViewBindingActivity"
       android:launchMode="standard"
-      android:name=".ViewBindingActivity">
+      android:taskAffinity="org.markensic.learn.jetpack.view">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -24,21 +33,33 @@
     </activity>
 
     <activity
-      android:taskAffinity="org.markensic.learn.jetpack.data"
-      android:launchMode="singleTask"
-      android:name=".DataBindingActivity"/>
+      android:name=".DataBindingActivity"
+      android:screenOrientation="portrait" />
 
     <activity
       android:name=".AddresslinkActivity"
-      android:screenOrientation="portrait"/>
+      android:screenOrientation="portrait" />
 
     <activity
       android:name=".WaterfallActivity"
-      android:screenOrientation="portrait"/>
+      android:screenOrientation="portrait" />
 
     <activity
       android:name=".ScrollActivity"
-      android:screenOrientation="portrait"/>
+      android:screenOrientation="portrait" />
+
+    <activity
+      android:name=".BaiduMapActivity"
+      android:screenOrientation="portrait" />
+
+    <meta-data
+      android:name="com.baidu.lbsapi.API_KEY"
+      android:value="HhnlXhatUgzDdOkAT5EVkAKpwzACVArj" />
+
+    <service
+      android:name="com.baidu.location.f"
+      android:enabled="true"
+      android:process=":remote" />
   </application>
 
 </manifest>
