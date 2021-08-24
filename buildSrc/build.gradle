@@ -1,8 +1,8 @@
 repositories {
-  google()
-  jcenter()
+    google()
+    jcenter()
 }
 
 dependencies {
-  implementation "com.android.tools.build:gradle:4.1.1"
+    implementation "com.android.tools.build:gradle:4.1.1"
 }

@@ -1,89 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  tools:context=".ViewBindingActivity">
-
-  <Button
-    android:id="@+id/btn"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:text="Start DataBinding!"
-    android:textAllCaps="false"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-  <ImageView
-    android:id="@+id/iv"
-    android:layout_width="0dp"
-    android:layout_height="200dp"
-    android:layout_marginTop="10dp"
-    android:scaleType="fitXY"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/btn" />
-
-  <org.markensic.learn.jetpack.widget.MultilineTextView
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
-    android:layout_marginTop="10dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/iv"/>
+    android:layout_height="match_parent"
+    tools:context=".ViewBindingActivity">
 
-  <org.markensic.learn.jetpack.widget.TouchGroupA
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_marginTop="10dp"
-    android:background="@color/teal_200"
-    android:orientation="vertical"
-    android:visibility="gone"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/iv">
-
-    <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:text="TouchGroupA"
-      android:textSize="20sp" />
-
-    <org.markensic.learn.jetpack.widget.TouchGroupB
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_marginTop="50dp"
-      android:background="@color/teal_700"
-      android:orientation="vertical">
-
-      <TextView
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="TouchGroupB"
-        android:textSize="20sp" />
+        android:background="@color/white"
+        android:text="Start DataBinding!"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-      <org.markensic.learn.jetpack.widget.TouchGroupC
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn" />
+
+    <org.markensic.learn.jetpack.widget.MultilineTextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:background="@color/purple_200">
+        android:layout_height="500dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv" />
+
+    <org.markensic.learn.jetpack.widget.TouchGroupA
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv">
 
         <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:gravity="center"
-          android:text="TouchGroupC"
-          android:textSize="20sp" />
-      </org.markensic.learn.jetpack.widget.TouchGroupC>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TouchGroupA"
+            android:textSize="20sp" />
 
-    </org.markensic.learn.jetpack.widget.TouchGroupB>
+        <org.markensic.learn.jetpack.widget.TouchGroupB
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:background="@color/teal_700"
+            android:orientation="vertical">
 
-  </org.markensic.learn.jetpack.widget.TouchGroupA>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TouchGroupB"
+                android:textSize="20sp" />
+
+            <org.markensic.learn.jetpack.widget.TouchGroupC
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:background="@color/purple_200">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TouchGroupC"
+                    android:textSize="20sp" />
+            </org.markensic.learn.jetpack.widget.TouchGroupC>
+
+        </org.markensic.learn.jetpack.widget.TouchGroupB>
+
+    </org.markensic.learn.jetpack.widget.TouchGroupA>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
