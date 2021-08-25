@@ -8,15 +8,15 @@ import android.widget.LinearLayout
 
 class TouchGroupB(c: Context, attributeSet: AttributeSet) : LinearLayout(c, attributeSet) {
 
-    override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
-        val result = super.onInterceptTouchEvent(ev)
-        Log.e(this::class.simpleName, "onInterceptTouchEvent")
-        return result
-    }
+  override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
+    val result = super.onInterceptTouchEvent(ev)
+    Log.e(this::class.simpleName, "onInterceptTouchEvent")
+    return result
+  }
 
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        val result = super.dispatchTouchEvent(ev)
-        Log.e(this::class.simpleName, "dispatchTouchEvent")
-        return result
-    }
+  override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+    val result = super.dispatchTouchEvent(ev)
+    Log.e(this::class.simpleName, "dispatchTouchEvent")
+    return result
+  }
 }

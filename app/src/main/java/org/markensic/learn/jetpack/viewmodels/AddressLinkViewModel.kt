@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModel
 
 class AddressLinkViewModel : ViewModel() {
 
-    val provName = MutableLiveData("省份")
+  val provName = MutableLiveData("省份")
 
-    val capName = MutableLiveData("省会")
+  val capName = MutableLiveData("省会")
 
-    val emailName = MutableLiveData("电邮")
+  val emailName = MutableLiveData("电邮")
 }

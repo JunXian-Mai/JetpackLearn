@@ -1,83 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+  <data>
 
-        <variable
-            name="vm"
-            type="org.markensic.learn.jetpack.viewmodels.AddressLinkViewModel" />
+    <variable
+      name="vm"
+      type="org.markensic.learn.jetpack.viewmodels.AddressLinkViewModel" />
 
-    </data>
+  </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".AddresslinkActivity">
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddresslinkActivity">
 
-        <TextView
-            android:id="@+id/prov_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:text="@={vm.provName}"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/prov_sp"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+      android:id="@+id/prov_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="25dp"
+      android:text="@={vm.provName}"
+      android:textSize="12sp"
+      app:layout_constraintStart_toStartOf="@+id/prov_sp"
+      app:layout_constraintTop_toTopOf="parent" />
 
-        <Spinner
-            android:id="@+id/prov_sp"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/prov_name" />
+    <Spinner
+      android:id="@+id/prov_sp"
+      android:layout_width="300dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textSize="16sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/prov_name" />
 
-        <TextView
-            android:id="@+id/cap_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:text="@={vm.capName}"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/prov_sp"
-            app:layout_constraintTop_toBottomOf="@+id/prov_sp" />
+    <TextView
+      android:id="@+id/cap_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="25dp"
+      android:text="@={vm.capName}"
+      android:textSize="12sp"
+      app:layout_constraintStart_toStartOf="@+id/prov_sp"
+      app:layout_constraintTop_toBottomOf="@+id/prov_sp" />
 
-        <Spinner
-            android:id="@+id/city_sp"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cap_name" />
+    <Spinner
+      android:id="@+id/city_sp"
+      android:layout_width="300dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textSize="16sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/cap_name" />
 
-        <TextView
-            android:id="@+id/email_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:text="@={vm.emailName}"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/prov_sp"
-            app:layout_constraintTop_toBottomOf="@+id/city_sp" />
+    <TextView
+      android:id="@+id/email_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:layout_marginTop="25dp"
+      android:text="@={vm.emailName}"
+      android:textSize="12sp"
+      app:layout_constraintStart_toStartOf="@+id/prov_sp"
+      app:layout_constraintTop_toBottomOf="@+id/city_sp" />
 
-        <Spinner
-            android:id="@+id/email_sp"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email_name" />
+    <Spinner
+      android:id="@+id/email_sp"
+      android:layout_width="300dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textSize="16sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/email_name" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

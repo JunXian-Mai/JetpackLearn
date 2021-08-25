@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#0000FF">
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#0000FF">
+    android:layout_height="300dp"
+    android:background="#F34563" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="#F34563" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#225588" />
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#225588" />
 
 </FrameLayout>

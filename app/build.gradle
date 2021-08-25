@@ -1,85 +1,85 @@
 plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
-    id 'kotlin-parcelize'
-    id 'org.markensic'
+  id 'com.android.application'
+  id 'kotlin-android'
+  id 'kotlin-kapt'
+  id 'kotlin-parcelize'
+  id 'org.markensic'
 }
 
 markensic {
-    name 'LoSyc'
+  name 'LoSyc'
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+  compileSdkVersion 30
+  buildToolsVersion "30.0.3"
 
-    defaultConfig {
-        applicationId "org.markensic.learn.jetpack"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+  defaultConfig {
+    applicationId "org.markensic.learn.jetpack"
+    minSdkVersion 21
+    targetSdkVersion 30
+    versionCode 1
+    versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
+  }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+  kotlinOptions {
+    jvmTarget = '1.8'
+    useIR = true
+  }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
-        useIR = true
-    }
-
-    buildFeatures {
-        viewBinding true
-        dataBinding true
-    }
+  buildFeatures {
+    viewBinding true
+    dataBinding true
+  }
 }
 
 repositories {
-    flatDir {
-        dirs 'libs'
-    }
+  flatDir {
+    dirs 'libs'
+  }
 }
 
 gradle.taskGraph.whenReady {
-    tasks.each {
-        println("${it.name} : ${it.class.name - '_Decorated'}")
-    }
+  tasks.each {
+    println("${it.name} : ${it.class.name - '_Decorated'}")
+  }
 }
 
 dependencies {
-    implementation(name: 'core-release', ext: 'aar')
-    implementation(name: 'mvvm-release', ext: 'aar')
-    implementation(name: 'BaiduLBS_AndroidSDK_Lib', ext: 'aar')
-    implementation 'pub.devrel:easypermissions:3.0.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinVersion"
-    implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
-    implementation "com.google.android.material:material:$rootProject.materialVersion"
-    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
-    implementation "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
-    implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
-    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
-    implementation 'io.coil-kt:coil:1.2.2'
-    kapt "com.android.databinding:compiler:4.1.1"
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+  implementation(name: 'core-release', ext: 'aar')
+  implementation(name: 'mvvm-release', ext: 'aar')
+  implementation(name: 'BaiduLBS_AndroidSDK_Lib', ext: 'aar')
+  implementation 'pub.devrel:easypermissions:3.0.0'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinVersion"
+  implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinVersion"
+  implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
+  implementation "com.google.android.material:material:$rootProject.materialVersion"
+  implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+  implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+  implementation "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
+  implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
+  implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+  implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+  implementation 'io.coil-kt:coil:1.2.2'
+  kapt "com.android.databinding:compiler:4.1.1"
+  testImplementation 'junit:junit:4.+'
+  androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+  androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

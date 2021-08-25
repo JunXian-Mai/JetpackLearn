@@ -11,24 +11,24 @@ import org.markensic.learn.jetpack.viewmodels.DataBindingViewModelLiveData
 
 class DataBindingActivity : BaseActicity(), LifecycleObserver {
 
-    private lateinit var binding: ActivityBindingDataBinding
-    private val liveData: DataBindingViewModelLiveData by viewModels()
-    private val viewModel: DataBindingViewModel by viewModels()
-    private val dataBinding: DataBinding = DataBinding()
+  private lateinit var binding: ActivityBindingDataBinding
+  private val liveData: DataBindingViewModelLiveData by viewModels()
+  private val viewModel: DataBindingViewModel by viewModels()
+  private val dataBinding: DataBinding = DataBinding()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_binding_data)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_binding_data)
 
-        binding.liveData = liveData
+    binding.liveData = liveData
 //    binding.viewModel = viewModel
 //    binding.dataBinding = dataBinding
 //    lifecycle.addObserver(this)
 
-        //双向绑定 1： 配合"@={xxxx}"
-        binding.lifecycleOwner = this
+    //双向绑定 1： 配合"@={xxxx}"
+    binding.lifecycleOwner = this
 
-        //双向绑定 2： 配合"@={xxxx}"
+    //双向绑定 2： 配合"@={xxxx}"
 //    liveData.detail.observe(this, { t ->
 //      t?.let {
 //        if (it.isNotBlank()) {
@@ -42,5 +42,5 @@ class DataBindingActivity : BaseActicity(), LifecycleObserver {
 //    liveData.testText.observe(this) {
 //      logd("changed!")
 //    }
-    }
+  }
 }

@@ -1,83 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+  <data>
 
-        <variable
-            name="LiveData"
-            type="org.markensic.learn.jetpack.viewmodels.DataBindingViewModelLiveData" />
+    <variable
+      name="LiveData"
+      type="org.markensic.learn.jetpack.viewmodels.DataBindingViewModelLiveData" />
 
-        <variable
-            name="viewModel"
-            type="org.markensic.learn.jetpack.viewmodels.DataBindingViewModel" />
+    <variable
+      name="viewModel"
+      type="org.markensic.learn.jetpack.viewmodels.DataBindingViewModel" />
 
-        <variable
-            name="dataBinding"
-            type="org.markensic.learn.jetpack.viewmodels.DataBinding" />
-    </data>
+    <variable
+      name="dataBinding"
+      type="org.markensic.learn.jetpack.viewmodels.DataBinding" />
+  </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".DataBindingActivity">
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataBindingActivity">
 
-        <EditText
-            android:id="@+id/ed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+      android:id="@+id/ed"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btn_input"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:onClick="@{() -> LiveData.addInputToDetail(ed.getText().toString())}"
-            android:text="@{LiveData.btnText}"
-            android:textAllCaps="false"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ed" />
+    <Button
+      android:id="@+id/btn_input"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:onClick="@{() -> LiveData.addInputToDetail(ed.getText().toString())}"
+      android:text="@{LiveData.btnText}"
+      android:textAllCaps="false"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/ed" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:onClick="@{() -> LiveData.directSetText(tv, ed.getText().toString())}"
-            android:text="@{LiveData.btnChangeColor}"
-            android:textAllCaps="false"
-            app:layout_constraintStart_toEndOf="@+id/btn_input"
-            app:layout_constraintTop_toTopOf="@+id/btn_input" />
+    <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dp"
+      android:onClick="@{() -> LiveData.directSetText(tv, ed.getText().toString())}"
+      android:text="@{LiveData.btnChangeColor}"
+      android:textAllCaps="false"
+      app:layout_constraintStart_toEndOf="@+id/btn_input"
+      app:layout_constraintTop_toTopOf="@+id/btn_input" />
 
-        <Button
-            android:id="@+id/testBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:onClick="@{() -> LiveData.changeTestText()}"
-            android:text="@={LiveData.testText}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_input" />
+    <Button
+      android:id="@+id/testBtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="5dp"
+      android:onClick="@{() -> LiveData.changeTestText()}"
+      android:text="@={LiveData.testText}"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btn_input" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/gline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.5" />
 
-        <TextView
-            android:id="@+id/tv"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="@={LiveData.detail}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gline" />
+    <TextView
+      android:id="@+id/tv"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:text="@={LiveData.detail}"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/gline" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

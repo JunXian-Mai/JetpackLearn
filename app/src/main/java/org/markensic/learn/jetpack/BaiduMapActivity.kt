@@ -15,82 +15,82 @@ import org.markensic.learn.jetpack.databinding.ActivityBaidumapBinding
 import org.markensic.learn.jetpack.viewmodels.BaiduMapViewModel
 
 class BaiduMapActivity : BaseActicity() {
-    lateinit var binding: ActivityBaidumapBinding
-    lateinit var locationClient: LocationClient
-    val viewModel: BaiduMapViewModel by viewModels()
+  lateinit var binding: ActivityBaidumapBinding
+  lateinit var locationClient: LocationClient
+  val viewModel: BaiduMapViewModel by viewModels()
 
-    @Volatile
-    private var toCurrentLocation = false
+  @Volatile
+  private var toCurrentLocation = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_baidumap)
-        binding.vm = viewModel
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_baidumap)
+    binding.vm = viewModel
 
-        binding.mapView.map.isMyLocationEnabled = true
+    binding.mapView.map.isMyLocationEnabled = true
 
-        val locationClientOp = LocationClientOption().apply {
-            openGps = true
-            coorType = "bd09ll"
-            scanSpan = 1000
-        }
+    val locationClientOp = LocationClientOption().apply {
+      openGps = true
+      coorType = "bd09ll"
+      scanSpan = 1000
+    }
 
-        locationClient = LocationClient(this, locationClientOp).apply {
-            registerLocationListener(object : BDAbstractLocationListener() {
-                override fun onReceiveLocation(p0: BDLocation?) {
-                    p0?.let {
-                        CoreLog.d(
-                            """
-              Loaction --> 
+    locationClient = LocationClient(this, locationClientOp).apply {
+      registerLocationListener(object : BDAbstractLocationListener() {
+        override fun onReceiveLocation(p0: BDLocation?) {
+          p0?.let {
+            CoreLog.d(
+              """
+              Loaction -->
                 latitude: ${it.latitude}
                 longitude: ${it.longitude}
             """.trimIndent()
-                        )
+            )
 
-                        val locData = MyLocationData.Builder()
-                            .accuracy(it.radius)
-                            .direction(it.direction)
-                            .latitude(it.latitude)
-                            .longitude(it.longitude)
-                            .build()
+            val locData = MyLocationData.Builder()
+              .accuracy(it.radius)
+              .direction(it.direction)
+              .latitude(it.latitude)
+              .longitude(it.longitude)
+              .build()
 
-                        binding.mapView.map.apply {
-                            setMyLocationData(locData)
+            binding.mapView.map.apply {
+              setMyLocationData(locData)
 
-                            if (!toCurrentLocation) {
-                                animateMapStatus(
-                                    MapStatusUpdateFactory.newLatLng(
-                                        LatLng(it.latitude, it.longitude)
-                                    )
-                                )
-                                animateMapStatus(
-                                    MapStatusUpdateFactory.zoomTo(18f)
-                                )
-                                toCurrentLocation = true
-                            }
-                        }
-                    }
-                }
-            })
+              if (!toCurrentLocation) {
+                animateMapStatus(
+                  MapStatusUpdateFactory.newLatLng(
+                    LatLng(it.latitude, it.longitude)
+                  )
+                )
+                animateMapStatus(
+                  MapStatusUpdateFactory.zoomTo(18f)
+                )
+                toCurrentLocation = true
+              }
+            }
+          }
         }
-
-        locationClient.start()
+      })
     }
 
-    override fun onResume() {
-        binding.mapView.onResume()
-        super.onResume()
-    }
+    locationClient.start()
+  }
 
-    override fun onPause() {
-        binding.mapView.onPause()
-        super.onPause()
-    }
+  override fun onResume() {
+    binding.mapView.onResume()
+    super.onResume()
+  }
 
-    override fun onDestroy() {
-        locationClient.stop()
-        binding.mapView.map.isMyLocationEnabled = false
-        binding.mapView.onDestroy()
-        super.onDestroy()
-    }
+  override fun onPause() {
+    binding.mapView.onPause()
+    super.onPause()
+  }
+
+  override fun onDestroy() {
+    locationClient.stop()
+    binding.mapView.map.isMyLocationEnabled = false
+    binding.mapView.onDestroy()
+    super.onDestroy()
+  }
 }

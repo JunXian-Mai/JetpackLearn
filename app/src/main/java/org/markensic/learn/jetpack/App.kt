@@ -8,15 +8,15 @@ import org.markensic.mvvm.base.BaseMvvmApplication
 
 class App : BaseMvvmApplication() {
 
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        CoreApp.initCore(this)
-    }
+  override fun attachBaseContext(base: Context?) {
+    super.attachBaseContext(base)
+    CoreApp.initCore(this)
+  }
 
-    override fun onCreate() {
-        super.onCreate()
-        SDKInitializer.initialize(this);
-        SDKInitializer.setCoordType(CoordType.BD09LL)
-    }
+  override fun onCreate() {
+    super.onCreate()
+    SDKInitializer.initialize(this);
+    SDKInitializer.setCoordType(CoordType.BD09LL)
+  }
 
 }

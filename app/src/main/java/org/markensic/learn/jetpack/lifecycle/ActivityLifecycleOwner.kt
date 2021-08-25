@@ -5,7 +5,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 
 internal class ActivityLifecycleOwner(private val c: Context, private val lifecycle: Lifecycle) :
-    LifecycleOwner {
+  LifecycleOwner {
 
-    override fun getLifecycle() = lifecycle
+  override fun getLifecycle() = lifecycle
 }

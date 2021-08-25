@@ -11,19 +11,19 @@ import org.markensic.learn.jetpack.databinding.ActivityBindingViewBinding
 import org.markensic.learn.jetpack.models.lhc
 
 class ViewBindingActivity : BaseActicity(), LifecycleObserver {
-    private lateinit var binding: ActivityBindingViewBinding
+  private lateinit var binding: ActivityBindingViewBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityBindingViewBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = ActivityBindingViewBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-        binding.btn.setOnClickListener {
-            startActivity(Intent(this, DataBindingActivity::class.java))
-        }
+    binding.btn.setOnClickListener {
+      startActivity(Intent(this, DataBindingActivity::class.java))
+    }
 
-        binding.iv.load(lhc.random())
-        CoreLog.d("decorView: ${window.decorView}")
+    binding.iv.load(lhc.random())
+
 
 //    binding.dt.setOnLongClickListener {
 //      binding.dt.showDeleteImage = true
@@ -82,13 +82,13 @@ class ViewBindingActivity : BaseActicity(), LifecycleObserver {
 //    animeSet.playSequentially(rotateAnime, bottomAnime, headAnime, rotateAnime2)
 //    animeSet.start()
 
-        lifecycle.addObserver(this)
-    }
+    lifecycle.addObserver(this)
+  }
 
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    fun onLifeResume() {
+  @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+  fun onLifeResume() {
 
-    }
+  }
 
 }
